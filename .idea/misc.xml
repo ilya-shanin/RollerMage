@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/drawable/baseline_analytics_24.xml" value="0.537" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/activity_main2.xml" value="0.5744791666666667" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/app_bar_main.xml" value="0.5744791666666667" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/fragment_advanced.xml" value="0.5703125" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/fragment_basic.xml" value="0.5703125" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/fragment_bugreport.xml" value="0.32447916666666665" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/fragment_magic.xml" value="0.5703125" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/fragment_profile.xml" value="0.3104166666666667" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/fragment_settings.xml" value="0.32447916666666665" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/fragment_tabbed.xml" value="0.5744791666666667" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/sidebar_header.xml" value="0.2793819655521783" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/toolbar.xml" value="0.27887537993920974" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/layout/tutorial_item_layout.xml" value="0.40520833333333334" />
+        <entry key="..\:/AndroidProjects/RollerMage/app/src/main/res/menu/sidebar_menu.xml" value="0.5744791666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

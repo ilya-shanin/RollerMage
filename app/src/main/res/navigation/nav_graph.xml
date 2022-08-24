@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/sidebar_main" >
+
+    <fragment
+        android:id="@+id/sidebar_main"
+        android:name="com.shanin.rollermage.Fragments.TabbedFragment"
+        android:label="Учимся кататься"
+        android:layout="@layout/fragment_tabbed"/>
+
+    <fragment
+        android:id="@+id/sidebar_settings"
+        android:name="com.shanin.rollermage.Fragments.SettingsFragment"
+        android:label="Настройки"
+        android:layout="@layout/fragment_settings"/>
+
+    <fragment
+        android:id="@+id/sidebar_profile"
+        android:name="com.shanin.rollermage.Fragments.ProfileFragment"
+        android:label="Профиль"
+        android:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/sidebar_upgrade"
+        android:name="com.shanin.rollermage.Fragments.UpgradeFragment"
+        android:label="Улучшить"
+        android:layout="@layout/fragment_upgrade"/>
+
+    <fragment
+        android:id="@+id/sidebar_report"
+        android:name="com.shanin.rollermage.Fragments.BugreportFragment"
+        android:label="Обратная связь"
+        android:layout="@layout/fragment_bugreport" />
+
+</navigation>

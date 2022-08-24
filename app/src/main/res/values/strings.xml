@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RollerMage</string>
+    <string name="menu_main">Главная</string>
+    <string name="menu_app_section">Приложение</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_profile">Профиль</string>
+    <string name="menu_user_profile">Мой профиль</string>
+    <string name="menu_upgrade">Получить магию</string>
+    <string name="menu_logout">Выйти из профиля</string>
+    <string name="openNavDrawer">Открыть меню</string>
+    <string name="closeNavDrawer">Закрыть меню</string>
+    <string name="menu_report_bug">Сообщить об ошибке</string>
+    <string name="basic">Базовый</string>
+    <string name="advanced">Продвинутый</string>
+    <string name="magic">Магический</string>
+    <string name="hello_blank_fragment">Пустой фрагмент</string>
+</resources>

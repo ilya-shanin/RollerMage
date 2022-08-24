@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/menu_app_section"
+        android:title="@string/menu_app_section"
+        android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/sidebar_main"
+                android:title="@string/menu_main"
+                android:icon="@drawable/baseline_home_24"/>
+
+            <item
+                android:id="@+id/sidebar_settings"
+                android:title="@string/menu_settings"
+                android:icon="@drawable/baseline_settings_24"/>
+
+    </group>
+
+    <group
+        android:id="@+id/menu_profile_section"
+        android:title="@string/menu_profile"
+        android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/sidebar_profile"
+                android:title="@string/menu_user_profile"
+                android:icon="@drawable/baseline_manage_accounts_24"/>
+
+            <item
+                android:id="@+id/sidebar_upgrade"
+                android:title="@string/menu_upgrade"
+                android:icon="@drawable/baseline_stars_24"/>
+
+            <item
+                android:id="@+id/sidebar_logout"
+                android:title="@string/menu_logout"
+                android:icon="@drawable/baseline_logout_24"/>
+
+    </group>
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/sidebar_report"
+            android:title="@string/menu_report_bug"
+            android:icon="@drawable/baseline_announcement_24" />
+    </group>
+</menu>
