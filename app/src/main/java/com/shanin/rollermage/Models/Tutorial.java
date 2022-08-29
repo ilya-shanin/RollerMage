@@ -1,6 +1,6 @@
 package com.shanin.rollermage.Models;
 
-import android.media.Image;
+import java.util.List;
 
 public class Tutorial implements ITutorial{
 
@@ -8,16 +8,14 @@ public class Tutorial implements ITutorial{
     private final int difficulty;
     private final int titleImage;
     private final int tutorialLevel;
-    private final Content content;
-    private final String overview;
+    private final List<Paragraph> content;
 
-    public Tutorial(String name, int difficulty, int titleImage, int tutorialLevel, Content content, String overview) {
+    public Tutorial(String name, int difficulty, int titleImage, int tutorialLevel, List<Paragraph> content) {
         this.name = name;
         this.difficulty = difficulty;
         this.titleImage = titleImage;
         this.tutorialLevel = tutorialLevel;
         this.content = content;
-        this.overview = overview;
     }
 
     @Override
@@ -41,13 +39,8 @@ public class Tutorial implements ITutorial{
     }
 
     @Override
-    public Content getContent() {
+    public List<Paragraph> getContent() {
         return content;
-    }
-
-    @Override
-    public String getOverview(){
-        return overview;
     }
 
 }

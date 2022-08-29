@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/sidebar_main" >
+    app:startDestination="@id/sidebar_main">
 
     <fragment
         android:id="@+id/sidebar_main"
         android:name="com.shanin.rollermage.Fragments.TabbedFragment"
         android:label="Учимся кататься"
-        android:layout="@layout/fragment_tabbed"/>
+        android:layout="@layout/fragment_tabbed">
+        <action
+            android:id="@+id/action_sidebar_main_to_sidebar_settings"
+            app:destination="@id/sidebar_settings" />
+        <action
+            android:id="@+id/action_sidebar_main_to_sidebar_profile"
+            app:destination="@id/sidebar_profile" />
+        <action
+            android:id="@+id/action_sidebar_main_to_sidebar_upgrade"
+            app:destination="@id/sidebar_upgrade" />
+        <action
+            android:id="@+id/action_sidebar_main_to_sidebar_report"
+            app:destination="@id/sidebar_report" />
+    </fragment>
 
     <fragment
         android:id="@+id/sidebar_settings"
         android:name="com.shanin.rollermage.Fragments.SettingsFragment"
         android:label="Настройки"
-        android:layout="@layout/fragment_settings"/>
+        android:layout="@xml/preference_screen">
+        <action
+            android:id="@+id/action_sidebar_settings_to_dest_about"
+            app:destination="@id/dest_about" />
+        <action
+            android:id="@+id/action_sidebar_settings_to_dest_license"
+            app:destination="@id/dest_license" />
+    </fragment>
 
     <fragment
         android:id="@+id/sidebar_profile"
@@ -35,4 +55,15 @@
         android:label="Обратная связь"
         android:layout="@layout/fragment_bugreport" />
 
+    <fragment
+        android:id="@+id/dest_about"
+        android:name="com.shanin.rollermage.Fragments.AboutFragment"
+        android:label="О приложении"
+        tools:layout="@layout/fragment_about"/>
+
+    <fragment
+        android:id="@+id/dest_license"
+        android:name="com.shanin.rollermage.Fragments.LicenseFragment"
+        android:label="Лицензия"
+        tools:layout="@layout/fragment_license"/>
 </navigation>

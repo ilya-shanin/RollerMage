@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.shanin.rollermage.Adapters.RVTutorialAdapter;
-import com.shanin.rollermage.Models.Content;
+import com.shanin.rollermage.Models.Paragraph;
 import com.shanin.rollermage.Models.Tutorial;
 import com.shanin.rollermage.R;
 
@@ -54,7 +54,7 @@ public class BasicFragment extends Fragment {
 
         initData();
         RecyclerView recyclerView = v.findViewById(R.id.tutorial_rv);
-        LinearLayoutManager llManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager llManager = new LinearLayoutManager(getActivity());
         RVTutorialAdapter adapter = new RVTutorialAdapter(tutorials);
 
         recyclerView.setLayoutManager(llManager);
@@ -64,24 +64,31 @@ public class BasicFragment extends Fragment {
     }
 
     private void initData() {
+
         images = new ArrayList<>();
         images.add(R.drawable.baseline_bug_report_24);
+
+        Paragraph p1 = new Paragraph("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis malesuada vehicula. " +
+                "Integer at ipsum sollicitudin, vulputate dolor eu, tempus enim. Morbi eget euismod nisl, quis tempor velit. " +
+                "Phasellus et nulla a felis volutpat placerat. Mauris mattis, nibh congue efficitur hendrerit, " +
+                "sem dolor finibus augue, ac lacinia urna arcu vitae purus. " +
+                "Curabitur posuere posuere lorem in interdum. Donec quis iaculis nibh. " +
+                "Nam rhoncus nisl id dui finibus, ac lobortis leo iaculis.");
+        Paragraph p2 = new Paragraph("In hac habitasse platea dictumst. Aliquam erat volutpat. Morbi vel purus non tortor dignissim tincidunt. " +
+                "Nulla sit amet tristique mi. Morbi eleifend erat quam, in malesuada dolor volutpat et. " +
+                "Cras commodo leo arcu. Integer id tellus cursus, tincidunt dui sed, consectetur urna.",
+                images);
+
+        List<Paragraph> tcontent1 = new ArrayList<>();
+        List<Paragraph> tcontent2 = new ArrayList<>();
+        tcontent1.add(p1);
+        tcontent2.add(p2);
+
+        Tutorial tutorial1 = new Tutorial("First", 1, R.drawable.ic_circle_zero, 1, tcontent1);
+        Tutorial tutorial2 = new Tutorial("Second", 3, R.drawable.ic_circle_zero, 1, tcontent2);
+
         tutorials = new ArrayList<>();
-        tutorials.add(new Tutorial(
-                "First",
-                1,
-                R.drawable.ic_circle_zero,
-                1,
-                new Content("Lorem ipsum", "my url", images),
-                "В этом уроке вы научитесь правильно стоять на коньках"
-        ));
-        tutorials.add(new Tutorial(
-                "Second",
-                2,
-                R.drawable.ic_circle_zero,
-                1,
-                new Content("Lorem ipsum", "my url2", images),
-                "Вы узнаете как удерживать равновесие"
-        ));
+        tutorials.add(tutorial1);
+        tutorials.add(tutorial2);
     }
 }

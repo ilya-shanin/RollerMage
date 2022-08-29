@@ -4,26 +4,15 @@ import java.util.List;
 
 public class Content implements IContent{
 
-    private String content;
-    private String videoURL;
-    private List<Integer> images;
+    private List<Paragraph> content;
 
-    public Content(String content, String videoURL, List<Integer> images) {
+    public Content(List<Paragraph> content) {
         this.content = content;
-        this.videoURL = videoURL;
-        this.images = images;
     }
 
     @Override
-    public String getTutorialContent() {
+    public List<Paragraph> getTutorialContent() {
         return content;
     }
 
-    @Override
-    public String tutorialVideoURL() {
-        return videoURL;
-    }
-
-    @Override
-    public List<Integer> getImageArray() {return  images;}
 }

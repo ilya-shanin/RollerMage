@@ -1,12 +1,11 @@
 package com.shanin.rollermage.Models;
 
-import android.media.Image;
+import java.util.List;
 
 public interface ITutorial {
 
     String getName();
 
-    String getOverview();
 
     int getDifficulty();
 
@@ -14,6 +13,6 @@ public interface ITutorial {
 
     int getTutorialLevel();
 
-    Content getContent();
+    List<Paragraph> getContent();
 
 }

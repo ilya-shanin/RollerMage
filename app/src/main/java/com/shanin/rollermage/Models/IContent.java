@@ -4,10 +4,6 @@ import java.util.List;
 
 public interface IContent {
 
-    String getTutorialContent();
-
-    List<Integer> getImageArray();
-
-    String tutorialVideoURL();
+    List<Paragraph> getTutorialContent();
 
 }

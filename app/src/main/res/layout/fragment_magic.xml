@@ -6,10 +6,9 @@
     android:orientation="vertical"
     tools:context=".Fragments.MagicFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/magic_tutorial_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MagicFragment" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
