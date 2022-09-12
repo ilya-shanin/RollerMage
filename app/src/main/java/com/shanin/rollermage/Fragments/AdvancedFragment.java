@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.shanin.rollermage.Adapters.RVTutorialAdapter;
-import com.shanin.rollermage.Models.Paragraph;
-import com.shanin.rollermage.Models.Tutorial;
+import com.shanin.rollermage.Models.Entities.Paragraph;
+import com.shanin.rollermage.Models.Entities.Tutorial;
 import com.shanin.rollermage.R;
 
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ public class AdvancedFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_advanced, container, false);
 
-        initData();
+        //initData();
         RecyclerView recyclerView = v.findViewById(R.id.advanced_tutorial_rv);
         LinearLayoutManager llManager = new LinearLayoutManager(getActivity());
         RVTutorialAdapter adapter = new RVTutorialAdapter(tutorials);
@@ -61,7 +61,7 @@ public class AdvancedFragment extends Fragment {
 
         return v;
     }
-
+/*
     private void initData() {
 
         images = new ArrayList<>();
@@ -89,5 +89,5 @@ public class AdvancedFragment extends Fragment {
         tutorials = new ArrayList<>();
         tutorials.add(tutorial1);
         tutorials.add(tutorial2);
-    }
+    }*/
 }

@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.shanin.rollermage.Adapters.RVTutorialAdapter;
-import com.shanin.rollermage.Models.Paragraph;
-import com.shanin.rollermage.Models.Tutorial;
+import com.shanin.rollermage.Models.Entities.Paragraph;
+import com.shanin.rollermage.Models.Entities.Tutorial;
 import com.shanin.rollermage.R;
 
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class BasicFragment extends Fragment implements RVTutorialAdapter.ItemCli
 
         View v = inflater.inflate(R.layout.fragment_basic, container, false);
 
-        initData();
+        //initData();
         RecyclerView recyclerView = v.findViewById(R.id.tutorial_rv);
         LinearLayoutManager llManager = new LinearLayoutManager(getActivity());
         adapter = new RVTutorialAdapter(tutorials);
@@ -65,7 +65,7 @@ public class BasicFragment extends Fragment implements RVTutorialAdapter.ItemCli
 
         return v;
     }
-
+/*
     private void initData() {
 
         images = new ArrayList<>();
@@ -93,7 +93,7 @@ public class BasicFragment extends Fragment implements RVTutorialAdapter.ItemCli
         tutorials = new ArrayList<>();
         tutorials.add(tutorial1);
         tutorials.add(tutorial2);
-    }
+    } */
 
     @Override
     public void onItemClick(View v, int position) {

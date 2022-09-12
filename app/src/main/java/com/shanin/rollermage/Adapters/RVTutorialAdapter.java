@@ -1,5 +1,5 @@
 package com.shanin.rollermage.Adapters;
-import com.shanin.rollermage.Models.Tutorial;
+import com.shanin.rollermage.Models.Entities.Tutorial;
 import com.shanin.rollermage.R;
 
 import android.content.Context;
