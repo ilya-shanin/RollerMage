@@ -19,9 +19,6 @@ public class ViewStateAdapter extends FragmentStateAdapter {
 
     public ViewStateAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, Map<Integer, Fragment> pageMap) {
         super(fragmentManager, lifecycle);
-        /*fragmentList.add(BasicFragment.newInstance());
-        fragmentList.add(AdvancedFragment.newInstance());
-        fragmentList.add(MagicFragment.newInstance());*/
         for (Map.Entry<Integer, Fragment> entry: pageMap.entrySet()) {
             fragmentList.add(entry.getValue());
         }

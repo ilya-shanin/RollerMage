@@ -69,9 +69,6 @@ public class TabbedFragment extends Fragment {
         viewPager2.setAdapter(stateAdapter);
 
         final TabLayout tabLayout = v.findViewById(R.id.tab_layout);
-        /*tabLayout.addTab(tabLayout.newTab().setText(R.string.basic));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.advanced));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.magic));*/
 
         for (Map.Entry<Integer, Fragment> entry: pageMap.entrySet()) {
             tabLayout.addTab(tabLayout.newTab().setText(entry.getKey()));

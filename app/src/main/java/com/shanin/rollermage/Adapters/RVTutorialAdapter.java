@@ -18,9 +18,10 @@ import java.util.List;
 
 public class RVTutorialAdapter extends RecyclerView.Adapter<RVTutorialAdapter.TutorialViewHolder> {
 
-    private List<Tutorial> tutorials;
+    private final List<Tutorial> tutorials;
+    private ItemClickListener mItemClickListener;
 
-    public static class TutorialViewHolder extends RecyclerView.ViewHolder {
+    public class TutorialViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         CardView cardView;
         TextView name;
         LinearLayout diff;
@@ -34,6 +35,13 @@ public class RVTutorialAdapter extends RecyclerView.Adapter<RVTutorialAdapter.Tu
             diff = v.findViewById(R.id.tutorial_cv_diff);
             image = v.findViewById(R.id.tutorial_cv_img);
             mContext = context;
+            v.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if(mItemClickListener != null)
+                mItemClickListener.onItemClick(v, getAdapterPosition());
         }
     }
 
@@ -57,7 +65,6 @@ public class RVTutorialAdapter extends RecyclerView.Adapter<RVTutorialAdapter.Tu
     @Override
     public void onBindViewHolder(@NonNull TutorialViewHolder holder, int position) {
         holder.name.setText(tutorials.get(position).getName());
-        //holder.diff.setText(Integer.toString(tutorials.get(position).getDifficulty()));
         holder.image.setImageResource(tutorials.get(position).getTitleImage());
 
         for (int i = 0; i < tutorials.get(position).getDifficulty(); i++) {
@@ -67,5 +74,17 @@ public class RVTutorialAdapter extends RecyclerView.Adapter<RVTutorialAdapter.Tu
             imageView.setLayoutParams(imageViewLayoutParams);
             holder.diff.addView(imageView);
         }
+    }
+
+    public String getItem(int position){
+        return tutorials.get(position).getName();
+    }
+
+    public void setItemClickListener(ItemClickListener clickListener){
+        this.mItemClickListener = clickListener;
+    }
+
+    public interface ItemClickListener {
+        public void onItemClick(View v, int position);
     }
 }

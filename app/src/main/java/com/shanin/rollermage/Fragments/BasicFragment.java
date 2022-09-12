@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.shanin.rollermage.Adapters.RVTutorialAdapter;
 import com.shanin.rollermage.Models.Paragraph;
@@ -23,8 +24,9 @@ import java.util.List;
  * Use the {@link BasicFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BasicFragment extends Fragment {
+public class BasicFragment extends Fragment implements RVTutorialAdapter.ItemClickListener {
 
+    RVTutorialAdapter adapter;
     private List<Tutorial> tutorials;
     private List<Integer> images;
     public BasicFragment() {
@@ -55,7 +57,8 @@ public class BasicFragment extends Fragment {
         initData();
         RecyclerView recyclerView = v.findViewById(R.id.tutorial_rv);
         LinearLayoutManager llManager = new LinearLayoutManager(getActivity());
-        RVTutorialAdapter adapter = new RVTutorialAdapter(tutorials);
+        adapter = new RVTutorialAdapter(tutorials);
+        adapter.setItemClickListener(this);
 
         recyclerView.setLayoutManager(llManager);
         recyclerView.setAdapter(adapter);
@@ -90,5 +93,10 @@ public class BasicFragment extends Fragment {
         tutorials = new ArrayList<>();
         tutorials.add(tutorial1);
         tutorials.add(tutorial2);
+    }
+
+    @Override
+    public void onItemClick(View v, int position) {
+        Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 }

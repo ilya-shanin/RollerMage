@@ -51,15 +51,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         prefLicense.setOnPreferenceClickListener(listener);
     }
 
-    /*
-    @NonNull
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
-    } */
-
     Preference.OnPreferenceClickListener listener = preference -> {
         if (Objects.equals(preference.getKey(), "about")) {
             Navigation.findNavController(getView()).navigate(R.id.action_sidebar_settings_to_dest_about);
