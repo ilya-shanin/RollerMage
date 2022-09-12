@@ -19,16 +19,10 @@ import com.shanin.rollermage.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BasicFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class BasicFragment extends Fragment implements RVTutorialAdapter.ItemClickListener {
+public class BasicFragment extends BaseTabbedFragment {
 
-    RVTutorialAdapter adapter;
-    private List<Tutorial> tutorials;
-    private List<Integer> images;
+    private static final int level = 1;
+
     public BasicFragment() {
         // Required empty public constructor
     }
@@ -43,60 +37,24 @@ public class BasicFragment extends Fragment implements RVTutorialAdapter.ItemCli
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
 
-        }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View provideFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_basic, container, false);
+        View view = inflater.inflate(R.layout.fragment_basic, container,false);
+        return view;
+    }
 
-        //initData();
+    @Override
+    public RecyclerView provideRecyclerView(View v) {
         RecyclerView recyclerView = v.findViewById(R.id.tutorial_rv);
-        LinearLayoutManager llManager = new LinearLayoutManager(getActivity());
-        adapter = new RVTutorialAdapter(tutorials);
-        adapter.setItemClickListener(this);
-
-        recyclerView.setLayoutManager(llManager);
-        recyclerView.setAdapter(adapter);
-
-        return v;
+        return recyclerView;
     }
-/*
-    private void initData() {
-
-        images = new ArrayList<>();
-        images.add(R.drawable.baseline_bug_report_24);
-
-        Paragraph p1 = new Paragraph("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis malesuada vehicula. " +
-                "Integer at ipsum sollicitudin, vulputate dolor eu, tempus enim. Morbi eget euismod nisl, quis tempor velit. " +
-                "Phasellus et nulla a felis volutpat placerat. Mauris mattis, nibh congue efficitur hendrerit, " +
-                "sem dolor finibus augue, ac lacinia urna arcu vitae purus. " +
-                "Curabitur posuere posuere lorem in interdum. Donec quis iaculis nibh. " +
-                "Nam rhoncus nisl id dui finibus, ac lobortis leo iaculis.");
-        Paragraph p2 = new Paragraph("In hac habitasse platea dictumst. Aliquam erat volutpat. Morbi vel purus non tortor dignissim tincidunt. " +
-                "Nulla sit amet tristique mi. Morbi eleifend erat quam, in malesuada dolor volutpat et. " +
-                "Cras commodo leo arcu. Integer id tellus cursus, tincidunt dui sed, consectetur urna.",
-                images);
-
-        List<Paragraph> tcontent1 = new ArrayList<>();
-        List<Paragraph> tcontent2 = new ArrayList<>();
-        tcontent1.add(p1);
-        tcontent2.add(p2);
-
-        Tutorial tutorial1 = new Tutorial("First", 1, R.drawable.ic_circle_zero, 1, tcontent1);
-        Tutorial tutorial2 = new Tutorial("Second", 3, R.drawable.ic_circle_zero, 1, tcontent2);
-
-        tutorials = new ArrayList<>();
-        tutorials.add(tutorial1);
-        tutorials.add(tutorial2);
-    } */
 
     @Override
-    public void onItemClick(View v, int position) {
-        Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+    public List<Tutorial> loadData(int level) {
+        return null;
     }
 }

@@ -1,20 +1,26 @@
 package com.shanin.rollermage.Models.Entities;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.util.List;
 
-@Entity
+@Entity(tableName = "tutorials")
 public class Tutorial{
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private long id;
+
     private String name;
+
     private int difficulty;
+
+    @ColumnInfo(name = "title_image")
     private int titleImage;
+
+    @ColumnInfo(name = "tutorial_level")
     private int tutorialLevel;
-    private List<Paragraph> content;
 
     public long getId() {
         return id;
@@ -36,10 +42,6 @@ public class Tutorial{
         return tutorialLevel;
     }
 
-    public List<Paragraph> getContent() {
-        return content;
-    }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -58,10 +60,6 @@ public class Tutorial{
 
     public void setTutorialLevel(int tutorialLevel) {
         this.tutorialLevel = tutorialLevel;
-    }
-
-    public void setContent(List<Paragraph> content) {
-        this.content = content;
     }
 
 }
