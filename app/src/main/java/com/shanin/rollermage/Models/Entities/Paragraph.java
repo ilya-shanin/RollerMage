@@ -6,6 +6,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
+import com.shanin.rollermage.Models.Converters.ParagraphImagesConverter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +29,7 @@ public class Paragraph{
     private String paragraphText;
 
     @ColumnInfo(name = "paragraph_images")
+    @TypeConverters({ParagraphImagesConverter.class})
     private List<Integer> paragraphImages;
 
     public long getId() {
